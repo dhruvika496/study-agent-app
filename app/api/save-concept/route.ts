@@ -46,7 +46,7 @@ export async function POST(request: Request) {
           notes,
           last_updated: new Date().toISOString(),
         },
-        { onConflict: ['subject', 'concept'] }
+        { onConflict: 'subject,concept' }
       )
       .select()
 
